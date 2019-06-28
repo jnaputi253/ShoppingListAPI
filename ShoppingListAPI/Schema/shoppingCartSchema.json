@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "name": "Late Night Shopping List",
+  "items": [
+    {
+      "itemId": 1,
+      "acquired": false
+    },
+    {
+      "itemId": 3,
+      "acquired": false
+    },
+    {
+      "itemId": 5,
+      "acquired": false
+    }
+  ]
+}

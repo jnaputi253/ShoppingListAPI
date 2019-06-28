@@ -1,0 +1,7 @@
+{
+  "id": 1,
+  "name": "Water",
+  "brand": "Dasani",
+  "categories": [ 1, 2 ],
+  "price": 3.49
+}
