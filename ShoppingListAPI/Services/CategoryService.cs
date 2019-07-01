@@ -14,11 +14,21 @@ namespace ShoppingListAPI.Services
             _repository = repository;
         }
 
-        public async Task<IEnumerable<Category>> FetchAll()
+        public async Task<IEnumerable<Category>> FetchAllAsync()
         {
-            IEnumerable<Category> categories = await _repository.FetchAll();
+            IEnumerable<Category> categories = await _repository.FetchAllAsync();
 
             return categories;
+        }
+
+        public async Task CreateAsync(Category newEntity)
+        {
+            if (await _repository.ExistsAsync(newEntity))
+            {
+                return;
+            }
+
+            await _repository.CreateAsync(newEntity);
         }
     }
 }

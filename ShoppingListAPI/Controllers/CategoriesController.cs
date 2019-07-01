@@ -20,7 +20,7 @@ namespace ShoppingListAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> FetchAllCategories()
         {
-            IEnumerable<Category> categories = await _service.FetchAll();
+            IEnumerable<Category> categories = await _service.FetchAllAsync();
 
             return new ObjectResult(categories);
         }

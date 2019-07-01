@@ -3,8 +3,9 @@ using System.Threading.Tasks;
 
 namespace ShoppingListAPI.Services
 {
-    public interface IService<TModel> where TModel : class
+    public interface IService<TEntity> where TEntity : class
     {
-        Task<IEnumerable<TModel>> FetchAll();
+        Task<IEnumerable<TEntity>> FetchAllAsync();
+        Task CreateAsync(TEntity newEntity);
     }
 }

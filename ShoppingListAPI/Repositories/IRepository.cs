@@ -5,7 +5,8 @@ namespace ShoppingListAPI.Repositories
 {
     public interface IRepository<TEntity> where TEntity : class
     {
-        Task<IEnumerable<TEntity>> FetchAll();
-        Task Create(TEntity newEntity);
+        Task<IEnumerable<TEntity>> FetchAllAsync();
+        Task CreateAsync(TEntity newEntity);
+        Task<bool> ExistsAsync(TEntity entityToCheck);
     }
 }

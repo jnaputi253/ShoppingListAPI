@@ -7,7 +7,7 @@ using ShoppingListAPI.Entities.Configuration;
 
 namespace ShoppingListAPI.Repositories
 {
-    public class CategoryRepository : ICategoryRepository
+    public class CategoryRepository : IRepository<Category>
     {
         private readonly IMongoCollection<Category> _categories;
 
@@ -19,7 +19,7 @@ namespace ShoppingListAPI.Repositories
             _categories = database.GetCollection<Category>(DatabaseNames.Categories);
         }
 
-        public async Task<IEnumerable<Category>> FetchAll()
+        public async Task<IEnumerable<Category>> FetchAllAsync()
         {
             IAsyncCursor<Category> fetchedCategories = await _categories.FindAsync(filter => true);
             IEnumerable<Category> categories = await fetchedCategories.ToListAsync();
@@ -27,17 +27,17 @@ namespace ShoppingListAPI.Repositories
             return categories;
         }
 
-        public async Task Create(Category newEntity)
+        public async Task CreateAsync(Category newEntity)
         {
             await _categories.InsertOneAsync(newEntity);
         }
 
-        public async Task<Category> FindByName(string categoryName)
+        public async Task<bool> ExistsAsync(Category entityToCheck)
         {
             IAsyncCursor<Category> fetchedCategories = await _categories.FindAsync(
-                category => category.Name.Equals(categoryName, StringComparison.CurrentCultureIgnoreCase));
+                category => category.Name.Equals(entityToCheck.Name, StringComparison.CurrentCultureIgnoreCase));
 
-            return await fetchedCategories.FirstOrDefaultAsync();
+            return await fetchedCategories.FirstOrDefaultAsync() == null;
         }
     }
 }

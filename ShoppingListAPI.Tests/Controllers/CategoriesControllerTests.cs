@@ -21,7 +21,7 @@ namespace ShoppingListAPI.Tests.Controllers
         public async void ShouldReturnNoCategories()
         {
             var mockRepository = new Mock<IRepository<Category>>();
-            mockRepository.Setup(mock => mock.FetchAll())
+            mockRepository.Setup(mock => mock.FetchAllAsync())
                 .ReturnsAsync(new List<Category>());
 
             _repository = mockRepository.Object;
@@ -48,7 +48,7 @@ namespace ShoppingListAPI.Tests.Controllers
             };
 
             var mockRepository = new Mock<IRepository<Category>>();
-            mockRepository.Setup(mock => mock.FetchAll())
+            mockRepository.Setup(mock => mock.FetchAllAsync())
                 .ReturnsAsync(categories);
 
             _repository = mockRepository.Object;
