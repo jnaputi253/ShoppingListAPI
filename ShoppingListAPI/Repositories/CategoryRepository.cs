@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Driver;
-using ShoppingListAPI.Models;
-using ShoppingListAPI.Models.Configuration;
+using ShoppingListAPI.Entities;
+using ShoppingListAPI.Entities.Configuration;
 
 namespace ShoppingListAPI.Repositories
 {
-    public class CategoryRepository : IRepository<Category>
+    public class CategoryRepository : ICategoryRepository
     {
         private readonly IMongoCollection<Category> _categories;
 
@@ -24,6 +25,19 @@ namespace ShoppingListAPI.Repositories
             IEnumerable<Category> categories = await fetchedCategories.ToListAsync();
 
             return categories;
+        }
+
+        public async Task Create(Category newEntity)
+        {
+            await _categories.InsertOneAsync(newEntity);
+        }
+
+        public async Task<Category> FindByName(string categoryName)
+        {
+            IAsyncCursor<Category> fetchedCategories = await _categories.FindAsync(
+                category => category.Name.Equals(categoryName, StringComparison.CurrentCultureIgnoreCase));
+
+            return await fetchedCategories.FirstOrDefaultAsync();
         }
     }
 }

@@ -3,8 +3,9 @@ using System.Threading.Tasks;
 
 namespace ShoppingListAPI.Repositories
 {
-    public interface IRepository<TModel> where TModel : class
+    public interface IRepository<TEntity> where TEntity : class
     {
-        Task<IEnumerable<TModel>> FetchAll();
+        Task<IEnumerable<TEntity>> FetchAll();
+        Task Create(TEntity newEntity);
     }
 }

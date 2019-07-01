@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ShoppingListAPI.Models;
+using ShoppingListAPI.Entities;
 using ShoppingListAPI.Services;
 
 namespace ShoppingListAPI.Controllers

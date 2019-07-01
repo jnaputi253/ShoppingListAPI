@@ -1,4 +1,4 @@
-﻿namespace ShoppingListAPI.Models.Database
+﻿namespace ShoppingListAPI.Entities.Database
 {
     public sealed class CategorySchema
     {

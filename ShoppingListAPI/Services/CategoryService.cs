@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using ShoppingListAPI.Models;
+using ShoppingListAPI.Entities;
 using ShoppingListAPI.Repositories;
 
 namespace ShoppingListAPI.Services

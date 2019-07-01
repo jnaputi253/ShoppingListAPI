@@ -1,11 +1,11 @@
-﻿using ShoppingListAPI.Models;
-using ShoppingListAPI.Repositories;
+﻿using ShoppingListAPI.Repositories;
 using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using ShoppingListAPI.Controllers;
+using ShoppingListAPI.Entities;
 using ShoppingListAPI.Services;
 using Xunit;
 

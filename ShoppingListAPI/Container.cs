@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using ShoppingListAPI.Models;
-using ShoppingListAPI.Models.Configuration;
+using ShoppingListAPI.Entities;
+using ShoppingListAPI.Entities.Configuration;
 using ShoppingListAPI.Repositories;
 using ShoppingListAPI.Services;
 

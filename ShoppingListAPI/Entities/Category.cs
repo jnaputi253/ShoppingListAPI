@@ -1,8 +1,8 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using ShoppingListAPI.Models.Database;
+using ShoppingListAPI.Entities.Database;
 
-namespace ShoppingListAPI.Models
+namespace ShoppingListAPI.Entities
 {
     public class Category
     {

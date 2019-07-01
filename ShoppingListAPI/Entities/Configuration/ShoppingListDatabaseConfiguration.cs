@@ -1,4 +1,4 @@
-﻿namespace ShoppingListAPI.Models.Configuration
+﻿namespace ShoppingListAPI.Entities.Configuration
 {
     public class ShoppingListDatabaseConfiguration
     {

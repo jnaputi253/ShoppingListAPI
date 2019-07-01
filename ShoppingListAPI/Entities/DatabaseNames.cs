@@ -1,4 +1,4 @@
-﻿namespace ShoppingListAPI.Models
+﻿namespace ShoppingListAPI.Entities
 {
     public class DatabaseNames
     {
